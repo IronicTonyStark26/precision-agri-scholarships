@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>About This Site</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
 
 <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="scholarships.html">Scholarships</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
+  <div class="nav-container">
+    <a href="index.html" style="color:#fff; font-weight:700; font-size:1.25rem; text-decoration:none;">
+      Precision Ag Scholarships
+    </a>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="scholarships.html">Scholarships</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div class="container">
@@ -44,6 +55,23 @@
 <footer>
   <p>Designed for clarity • No fluff • Print-ready</p>
 </footer>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+    menuToggle.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('show');
+  });
+
+  menuToggle.addEventListener('keypress', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      menuToggle.click();
+    }
+  });
+</script>
 
 </body>
 </html>
