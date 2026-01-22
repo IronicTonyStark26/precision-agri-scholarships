@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Scholarships Table</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
 
 <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="scholarships.html">Scholarships</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
+  <div class="nav-container">
+    <a href="index.html" style="color:#fff; font-weight:700; font-size:1.25rem; text-decoration:none;">
+      Precision Ag Scholarships
+    </a>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="scholarships.html">Scholarships</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div class="container">
@@ -38,13 +49,13 @@
         <td>Erasmus Mundus – SUSTAGRI</td>
         <td>15 Jan 2026</td>
         <td>
-          Public University of Navarre (UPNA)<br>
-          University of Trás-os-Montes e Alto Douro (UTAD)<br>
+          Public University of Navarre (UPNA)<br />
+          University of Trás-os-Montes e Alto Douro (UTAD)<br />
           Agricultural University of Athens (AUA)
         </td>
         <td>
-          Spain<br>
-          Portugal<br>
+          Spain<br />
+          Portugal<br />
           Greece
         </td>
         <td>
@@ -58,8 +69,8 @@
           Full tuition + ~€1,400/month stipend + travel & insurance
         </td>
         <td>
-          <a href="https://sustagri.em-unavarra.es" target="_blank">Program Site</a><br>
-          <a href="https://sustagri-em.eu/" target="_blank">Consortium Info</a>
+          <a href="https://sustagri.em-unavarra.es" target="_blank" rel="noopener">Program Site</a><br />
+          <a href="https://sustagri-em.eu/" target="_blank" rel="noopener">Consortium Info</a>
         </td>
       </tr>
 
@@ -67,15 +78,15 @@
         <td>Erasmus Mundus – PlantHealth</td>
         <td>31 Dec 2025</td>
         <td>
-          Universitat Politècnica de València (UPV)<br>
-          University of Padua<br>
-          University of Göttingen<br>
+          Universitat Politècnica de València (UPV)<br />
+          University of Padua<br />
+          University of Göttingen<br />
           Institut Agro / AgroParisTech
         </td>
         <td>
-          Spain<br>
-          Italy<br>
-          Germany<br>
+          Spain<br />
+          Italy<br />
+          Germany<br />
           France
         </td>
         <td>
@@ -89,8 +100,8 @@
           Full tuition + ~€1,400/month stipend + travel & insurance
         </td>
         <td>
-          <a href="https://planthealth.upv.es/" target="_blank">Program Site</a><br>
-          <a href="https://planthealth.upv.es/web/apply/calendar-deadlines/" target="_blank">Apply & Deadlines</a>
+          <a href="https://planthealth.upv.es/" target="_blank" rel="noopener">Program Site</a><br />
+          <a href="https://planthealth.upv.es/web/apply/calendar-deadlines/" target="_blank" rel="noopener">Apply & Deadlines</a>
         </td>
       </tr>
     </tbody>
@@ -100,6 +111,23 @@
 <footer>
   <p>Last updated for 2026 intake • Erasmus Mundus focused</p>
 </footer>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+    menuToggle.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('show');
+  });
+
+  menuToggle.addEventListener('keypress', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      menuToggle.click();
+    }
+  });
+</script>
 
 </body>
 </html>
